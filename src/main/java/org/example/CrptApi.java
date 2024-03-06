@@ -14,7 +14,7 @@ public class Main {
     private long lastRequestTime;
     private int requestCount;
 
-    public Main(TimeUnit timeUnit, int requestLimit) {
+    public CrptApi(TimeUnit timeUnit, int requestLimit) {
         this.requestLimit = requestLimit;
         this.lastRequestTime = System.currentTimeMillis();
         this.requestCount = 0;
@@ -77,7 +77,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Main crptApi = new Main(TimeUnit.SECONDS, 10);
+        CrptApi crptApi = new CrptApi(TimeUnit.SECONDS, 10);
 
         String document = "{\"description\": {\"participantInn\": \"string\"}, \"doc_id\": \"string\", " +
                 "\"doc_status\": \"string\", \"doc_type\": \"LP_INTRODUCE_GOODS\", " +
