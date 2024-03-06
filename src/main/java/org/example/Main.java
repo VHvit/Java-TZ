@@ -8,13 +8,13 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class CrptApi {
+public class Main {
     private final int requestLimit;
     private final ReentrantLock lock = new ReentrantLock();
     private long lastRequestTime;
     private int requestCount;
 
-    public CrptApi(TimeUnit timeUnit, int requestLimit) {
+    public Main(TimeUnit timeUnit, int requestLimit) {
         this.requestLimit = requestLimit;
         this.lastRequestTime = System.currentTimeMillis();
         this.requestCount = 0;
@@ -77,7 +77,7 @@ public class CrptApi {
     }
 
     public static void main(String[] args) {
-        CrptApi crptApi = new CrptApi(TimeUnit.SECONDS, 10);
+        Main crptApi = new Main(TimeUnit.SECONDS, 10);
 
         String document = "{\"description\": {\"participantInn\": \"string\"}, \"doc_id\": \"string\", " +
                 "\"doc_status\": \"string\", \"doc_type\": \"LP_INTRODUCE_GOODS\", " +
